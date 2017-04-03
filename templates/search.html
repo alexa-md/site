@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Using the Alexa and IBM Watson API to make diagnoses from voice commands." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta property="og:site_name" content="alexaMD" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="alexaMD" />
+    <meta property="og:description" content="Using the Alexa and IBM Watson API to make diagnoses from voice commands." />
+
+    <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js')}}" type="text/javascript"></script>
+    <title>alexaMD | Search Results</title>
+  </head>
+
+  <body>
+    <div class="results-container">
+      <h1>Diagnosis</h1>
+      <h2><a href="/">&larr; Back to Search</a></h2>
+      <div class="keywords">Your input: {{inputTags|safe}}</div>
+      <hr>
+      <div class="result-title">You have {{diagnosisName}}, with a {{diagnosisConfidence}}% certainty.</div>
+      {{resultDesc|safe}}
+      <style>{{animations|safe}}</style>
+    </div>
+  </body>
+</html>
